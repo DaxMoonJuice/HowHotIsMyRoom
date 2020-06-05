@@ -1,12 +1,11 @@
 from flask import Flask, request
 import logging
 from datetime import datetime
-import pandas
 import json
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
-
+app.run(host='0.0.0.0')
 ##add postgresql db and store results--add input sanintation
 ##can we communicate to the sensors!
  ##remore firmware update
@@ -30,6 +29,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 ##store results in DB
 
+@app.route('/')
 def hello_world():
     return 'Hello World!'
 
@@ -51,10 +51,7 @@ def sensor_exception():
     app.logger.info('The Following Dict Has Been Recorded %s' % data)
     log_data(error_log)
     return error_log
-
-@app.route('/get_temp',methods=['GET'])
-def get_temp():
-    
+   
 
 
 
