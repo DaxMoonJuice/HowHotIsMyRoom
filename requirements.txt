@@ -22,5 +22,5 @@ pyudev==0.22.0
 requests==2.23.0
 rshell==0.0.28
 six==1.14.0
-urllib3==1.25.9
+urllib3==1.26.5
 Werkzeug==1.0.1
